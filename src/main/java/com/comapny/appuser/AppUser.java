@@ -30,28 +30,28 @@ public class AppUser implements UserDetails {
             generator = "app_user_sequence"
     )
     private Long id;
-    private String name;
+    private String firstname;
+    private String lastname;
     private String username;
     private String email;
     private String password;
     @Enumerated(EnumType.STRING)
     private AppUserRole appUserRole;
-    private Boolean locked;
-    private Boolean enabled;
+    private Boolean locked = false;
+    private Boolean enabled = false;
 
-    public AppUser(String name,
+    public AppUser(String firstname,
+                   String lastname,
                    String username,
                    String email,
                    String password,
-                   AppUserRole appUserRole,
-                   Boolean locked, Boolean enabled) {
-        this.name = name;
+                   AppUserRole appUserRole) {
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.username = username;
         this.email = email;
         this.password = password;
         this.appUserRole = appUserRole;
-        this.locked = locked;
-        this.enabled = enabled;
     }
 
     @Override

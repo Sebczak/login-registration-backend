@@ -1,5 +1,5 @@
 package com.comapny.registration;
 
-public record RegistrationRequest(String firstname, String lastname, String email, String password) {
+public record RegistrationRequest(String firstname, String lastname, String username, String email, String password) {
 
 }
